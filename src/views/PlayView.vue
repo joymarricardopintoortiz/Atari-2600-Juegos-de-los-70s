@@ -10,7 +10,7 @@ const game = computed(() => getGameById(route.params.id as string))
 
 <template>
   <main class="play">
-    <RouterLink to="/">← Volver al catálogo</RouterLink>
+    <RouterLink to="/" title="Volver al catálogo (tecla Esc)">← Volver al catálogo</RouterLink>
     <template v-if="game">
       <h1>{{ game.title }}</h1>
       <EmulatorScreen :rom-url="game.romUrl" />

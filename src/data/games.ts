@@ -31,6 +31,16 @@ export const games: Game[] = [
     color: '#6a1b9a',
     cover: '/covers/pitfall-2.jpg',
   },
+  {
+    id: 'combat',
+    title: 'Combat',
+    year: 1977,
+    description: 'El clásico icónico de tanques y aviones donde te enfrentas cara a cara en diferentes escenarios con laberintos y rebotes.',
+    romUrl: '/roms/combat.a26',
+    controls: 'J1: flechas + Espacio · J2: W A S D + R · F11 cambia el modo · F12 inicia',
+    color: '#b30808',
+    cover: '/covers/combat.jpg',
+  },
 ]
 
 export const getGameById = (id: string) => games.find((g) => g.id === id)

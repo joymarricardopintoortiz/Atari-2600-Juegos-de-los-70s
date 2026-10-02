@@ -21,6 +21,22 @@
         Javatari.CARTRIDGE_CHANGE_DISABLED = true
         Javatari.CARTRIDGE_SHOW_RECENT = false
         Javatari.CARTRIDGE_URL = new URLSearchParams(location.search).get('ROM')
+
+        // ---- Teclas del jugador 2: W A S D + R ----
+        // Javatari carga sus preferencias (y las teclas guardadas en el navegador)
+        // justo al arrancar. Envolvemos esa carga para imponer siempre estas teclas.
+        // Jugador 1 se queda por defecto: flechas + Espacio.
+        const loadOriginal = Javatari.userPreferences.load
+        Javatari.userPreferences.load = function () {
+            loadOriginal.apply(this, arguments)
+            const K = jt.DOMKeys
+            const p2 = Javatari.userPreferences.current.joystickKeys[1]
+            p2.up = K.VK_W
+            p2.left = K.VK_A
+            p2.down = K.VK_S
+            p2.right = K.VK_D
+            p2.button = K.VK_R
+        }
     </script>
 
 </body>
