@@ -41,6 +41,26 @@ export const games: Game[] = [
     color: '#b30808',
     cover: '/covers/combat.jpg',
   },
+  {
+    id: 'river-raid',
+    title: 'River Raid',
+    year: 1982,
+    description: 'Un impresionante título de desplazamiento vertical donde pilotas un avión a través de un cañón destruyendo barcos, puentes y helicópteros mientras vigilas tu combustible.',
+    romUrl: '/roms/river-raid.a26',
+    controls: 'Flechas para moverte, Espacio para saltar',
+    color: '#a5065d',
+    cover: '/covers/river-raid.jpg',
+  },
+  {
+    id: 'h-e-r-o',
+    title: 'H-E-R-O.',
+    year: 1984,
+    description: 'Un juego de rescate muy completo donde controlas a un héroe con un propulsor en la espalda, rayos láser y dinamita para salvar a mineros atrapados en cuevas peligrosas.',
+    romUrl: '/roms/h-e-r-o.a26',
+    controls: 'Flechas para moverte, Espacio para saltar',
+    color: '#995617',
+    cover: '/covers/h-e-r-o.png',
+  },
 ]
 
 export const getGameById = (id: string) => games.find((g) => g.id === id)
