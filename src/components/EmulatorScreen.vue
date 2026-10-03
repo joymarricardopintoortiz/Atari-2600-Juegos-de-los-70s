@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import ControllerPanel from './ControllerPanel.vue'
 
 const props = defineProps<{ romUrl: string }>()
 const router = useRouter()
@@ -152,7 +153,7 @@ onBeforeUnmount(() => {
       ref="frame"
       :key="romUrl"
       :src="src"
-      allow="autoplay; fullscreen"
+      allow="autoplay; fullscreen; gamepad"
       allowfullscreen
       @load="onLoad"
     />
@@ -164,6 +165,8 @@ onBeforeUnmount(() => {
         ⛶ Pantalla completa
       </button>
     </div>
+
+    <ControllerPanel :frame="frame" />
 
     <p class="hint">
       <kbd>+</kbd> / <kbd>−</kbd> tamaño · <kbd>F3</kbd> pantalla completa ·
